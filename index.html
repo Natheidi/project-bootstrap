@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>projekt</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;1,300&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <nav id="navbar" class="navbar navbar-expand-md fixed-top navbar-light bg-light fw-bold p-3">
+        <div class="container">
+            <a href="#" class="navbar-brand">
+                <img src="img/img-logo.jpg" width="140px" alt="logo, theme">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#fleet" class="nav-link">Cars Fleet</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#blog" class="nav-link">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#shop" class="nav-link">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#404" class="nav-link">404 </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link">Contact </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid container-img p-0">
+        <div class="bg-img"></div>
+        <div class="header-on-img text-center text-white">
+            <h1 class="h1-style">Find the Best Cars</h1>
+            <p class="p-style mt-sm-5">Lorem ipsum dolor sit, amet consectetur adipisicing elit. <br>
+                Sapiente neque suscipit sed, ad incidunt!</p>
+            <div class="line mt-3 mb-5"></div>
+            <div class="row form mt-5 container justify-content-evenly">
+                <div class="row mt-2 col-lg-3 col-md-12">
+                    <select name="Car Make" id="car-make-select" class="form-select">
+                        <option class="bg-secondary" value="1">Choose Car Make</option>
+                        <option value="2">Audi</option>
+                        <option value="3">BMV</option>
+                        <option value="4">Ford</option>
+                        <option value="5">Mazda</option>
+                        <option value="6">Mercedes</option>
+                    </select>
+                </div>
+                <div class="row mt-2 col-lg-3 col-md-12">
+                    <select name="Car Type" id="car-type-select" class="form-select">
+                        <option class="bg-secondary" value="1">Choose Car Type</option>
+                        <option value="2">Hatchback</option>
+                        <option value="3">Luxury</option>
+                        <option value="4">MPV</option>
+                        <option value="5">Sedan</option>
+                        <option value="6">SUV</option>
+                    </select>
+                </div>
+                <div class="row mt-2 col-lg-3 col-md-12">
+                    <input class="form-control" type="search" placeholder="Search..." id="search-input">
+                </div>
+                <div class="row mt-2 col-lg-3 col-md-12">
+                    <button type="button" class="btn text-dark bg-warning fst-italic" id="liveToastBtn"
+                        onclick="showToast()">FIND NOW</button>
+                    <div class="position-fixed top-0 p-5 mt-5 border-0" style="z-index: 11">
+                        <div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+                            <div class="toast-header">
+                                <button type="button" class="btn-close" data-bs-dismiss="toast"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="toast-body">
+                                <button class="btn btn-primary" type="button" disabled>
+                                    <span class="spinner-border spinner-border-sm" role="status"
+                                        aria-hidden="true"></span>
+                                    Loading...
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4 col-md-12 col-sm-12 bg-secondary p-3 text-center">
+                <div class="justify-content-center align-items-center p-lg-5 p-md-3">
+                    <h4 class="fw-bold mb-4 text-white">VARIETY OF CARS</h4>
+                    <p class="mb-4 text-white">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore dolorum
+                        vero,
+                        maxime dolore. Labore dolorum vero, maxime dolore.</p>
+                    <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalWindow">
+                        READ MORE <i class="fa-solid fa-arrow-right ms-2"></i>
+                    </button>
+                </div>
+
+                <div class="modal fade" id="modalWindow" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="modalLabel">READ MORE</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet quasi facilis impedit
+                                    libero quos quisquam. Eligendi alias assumenda a excepturi?
+                                </p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-12 col-sm-12 bg-dark p-3 text-center">
+                <div class="justify-content-center align-items-center p-lg-5 p-md-3">
+                    <h4 class="fw-bold mb-4 text-white">BEST RATE</h4>
+                    <p class="mb-4 text-white">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore dolorum
+                        vero,
+                        maxime dolore. Labore dolorum vero, maxime dolore.</p>
+                    <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalWindow">
+                        READ MORE <i class="fa-solid fa-arrow-right ms-2"></i>
+                    </button>
+                </div>
+                <div class="modal fade text-warning" id="modalWindow" tabindex="-1" aria-labelledby="modalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="modalLabel">READ MORE</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet quasi facilis impedit
+                                    libero quos quisquam. Eligendi alias assumenda a excepturi?</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-lg-4 col-md-12 col-sm-12 bg-secondary p-3 text-center">
+                <div class="justify-content-center align-items-center p-lg-5 p-md-3">
+                    <h4 class="fw-bold mb-4 text-white">SATISFIED CLIENTS</h4>
+                    <p class="mb-4 text-white">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore dolorum
+                        vero,
+                        maxime dolore. Labore dolorum vero, maxime dolore.</p>
+                    <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalWindow">
+                        READ MORE <i class="fa-solid fa-arrow-right ms-2"></i>
+                    </button>
+                </div>
+                <div class="modal fade" id="modalWindow" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-fullscreen-sm-down">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="modalLabel">READ MORE</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body text-warning">
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet quasi facilis impedit
+                                    libero quos quisquam. Eligendi alias assumenda a excepturi?</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid mt-5 d-flex justify-content-center mb-5">
+        <div class="container row g-0 container-cards-cars">
+            <div class="row flex-cards g-0">
+                <div class="card bg-warning col-md-3 col-sm-12 card-car m-4">
+                    <img class="card-img-top img-car" src="img/mercedes.png" alt="car, mercedes">
+                    <div class="card-body">
+                        <button class="btn btn-warning fw-bold" data-bs-toggle="popover" title="Tytuł komunikatu"
+                            data-bs-content="lorem ipsum" data-bs-placement="left" data-bs-content="Left popover">
+                            Mercedes A</button>
+                    </div>
+                    <div class="card-badge bg-danger text-warning p-1">NEW!</i></div>
+                </div>
+                <div class="card bg-warning col-md-3 col-sm-12 card-car m-4">
+                    <img class="card-img-top img-car" src="img/bmwx6.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <button class="btn btn-warning fw-bold" data-bs-toggle="popover" title="Tytuł komunikatu"
+                            data-bs-content="lorem ipsum" data-bs-placement="top" data-bs-content="Top popover">
+                            BMW X6</button>
+                    </div>
+                </div>
+                <div class="card bg-warning col-md-3 col-sm-12 card-car m-4">
+                    <img class="card-img-top img-car" src="img/bmwx5.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <button class="btn btn-warning fw-bold" data-bs-toggle="popover" title="Tytuł komunikatu"
+                            data-bs-content="lorem ipsum" data-bs-placement="right" data-bs-content="Right popover">
+                            BMW X5</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container d-flex justify-content-center text-center my-3">
+        <div class="w-50 d-flex justify-content-center">
+            <div id="carouselDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active" data-bs-interval="500">
+                    <img src="img/carousel-1.png" class="d-block w-20" alt="car logo">
+                  </div>
+                  <div class="carousel-item" data-bs-interval="2000">
+                    <img src="img/carousel-2.png" class="d-block w-20" alt="car logo">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="img/carousel-3.png" class="d-block w-20" alt="car logo">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="img/carousel-4.png" class="d-block w-20" alt="car logo">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="img/carousel-5.png" class="d-block w-20" alt="car logo">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="img/carousel-6.png" class="d-block w-20" alt="car logo">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="img/carousel-7.png" class="d-block w-20" alt="car logo">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="img/carousel-8.png" class="d-block w-20" alt="car logo">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselDark" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselDark" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+        </div>
+        
+    </div>
+
+    <div class="container-fluid container-img p-0 mt-5">
+        <div class="bg-contact-img"></div>
+        <div class="header-on-img text-center text-white">
+            <h1 class="fw-bold h-contact mb-5 h1-style">Contact Us</h1>
+            <p class="p-style">Lorem ipsum dolor sit, amet consectetur adipisicing elit. <br>
+                Sapiente neque suscipit sed, ad incidunt!</p>
+            <p class="p-style fw-bold fs-2 mt-3 mb-5">Call now (+40) 743 333 221</p>
+            <button class="btn bg-warning fw-bold fs-5 button-contact mt-5" type="button">CONTACT US</button>
+        </div>
+    </div>
+
+    <div class="container-fluid mt-5 d-flex justify-content-center ">
+        <div class="container row g-0 container-cards-cars">
+            <div class="row flex-cards g-0">
+                <div class="card bg-white col-md-3 col-sm-12 card-car m-4 text-center">
+                    <img class="card-img-top img-car" src="img/service.png" alt="car, mercedes">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold mb-3 card-service-h">Great Service</h5>
+                        <p class="mb-3 fw-light mt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam,
+                            dolores?</p>
+                        <button type="button" class="btn btn-warning" data-bs-toggle="modal"
+                            data-bs-target="#modalWindow">
+                            READ MORE <i class="fa-solid fa-arrow-right ms-2"></i>
+                        </button>
+                    </div>
+                    <div class="modal fade" id="modalWindow" tabindex="-1" aria-labelledby="modalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-fullscreen-sm-down">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="modalLabel">READ MORE</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body text-warning">
+                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet quasi facilis
+                                        impedit
+                                        libero quos quisquam. Eligendi alias assumenda a excepturi?</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card bg-white col-md-3 col-sm-12 card-car m-4 text-center">
+                    <img class="card-img-top img-car" src="img/coverage.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold mb-3 card-service-h">Best Coverage</h5>
+                        <p class="mb-3 fw-light mt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam,
+                            dolores?</p>
+                        <button type="button" class="btn btn-warning" data-bs-toggle="modal"
+                            data-bs-target="#modalWindow">
+                            READ MORE <i class="fa-solid fa-arrow-right ms-2"></i>
+                        </button>
+                    </div>
+                    <div class="modal fade" id="modalWindow" tabindex="-1" aria-labelledby="modalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-fullscreen-sm-down">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="modalLabel">READ MORE</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body text-warning">
+                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet quasi facilis
+                                        impedit
+                                        libero quos quisquam. Eligendi alias assumenda a excepturi?</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card bg-white col-md-3 col-sm-12 card-car m-4 text-center">
+                    <img class="card-img-top img-car" src="img/price.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold mb-3 card-service-h">Lowest Price</h5>
+                        <p class="mb-3 fw-light mt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam,
+                            dolores?</p>
+                        <button type="button" class="btn btn-warning" data-bs-toggle="modal"
+                            data-bs-target="#modalWindow">
+                            READ MORE <i class="fa-solid fa-arrow-right ms-2"></i>
+                        </button>
+                    </div>
+                    <div class="modal fade" id="modalWindow" tabindex="-1" aria-labelledby="modalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-fullscreen-sm-down">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="modalLabel">READ MORE</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body text-warning">
+                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet quasi facilis
+                                        impedit
+                                        libero quos quisquam. Eligendi alias assumenda a excepturi?</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid mt-5 d-flex justify-content-evenly bg-dark">
+        <div class="container row text-white ms-lg-5 ms-md-0 p-5">
+            <div class="col-lg-6 col-md-12">
+                <h5 class="fw-bold text-white mt-4">Frequently Asked Questions</h5>
+                <div class="accordion mt-5" id="accordionExample">
+                    <div class="card">
+                        <div class="card-header" id="headingOne">
+                            <h2 class="clearfix mb-0">
+                                <a class="btn btn-link faq-h" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                                    aria-expanded="true" aria-controls="collapseOne">QUESTION #1<i
+                                        class="fa-solid fa-angle-down ms-2"></i></a>
+                            </h2>
+                        </div>
+                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne"
+                            data-parents="#accordionExample">
+                            <div class="card-body faq-text">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, doloribus. Enim maxime
+                                ducimus doloremque quas voluptatem ut unde similique ipsa.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mt-3">
+                        <div class="card-header" id="headingTwo">
+                            <h2 class="clearfix mb-0">
+                                <a class="btn btn-link faq-h" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                    aria-expanded="true" aria-controls="collapseTwo">QUESTION #2<i
+                                        class="fa-solid fa-angle-down ms-2"></i></a>
+                            </h2>
+                        </div>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                            data-parents="#accordionExample">
+                            <div class="card-body faq-text">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem provident
+                                fugiat consequatur mollitia quod laboriosam expedita sunt. Ipsam nulla dolore rerum
+                                voluptatem cum unde dicta, exercitationem harum dolor, quam eum.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mt-3 mb-5">
+                        <div class="card-header" id="headingThree">
+                            <h2 class="clearfix mb-0">
+                                <a class="btn btn-link faq-h" data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                    aria-expanded="true" aria-controls="collapseThree">QUESTION #3<i
+                                        class="fa-solid fa-angle-down ms-2"></i></a>
+                            </h2>
+                        </div>
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                            data-parents="#accordionExample">
+                            <div class="card-body faq-text">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, doloribus. Enim maxime
+                                ducimus doloremque quas voluptatem ut unde similique ipsa.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-12">
+                <h5 class="fw-bold text-white mt-4">Useful Links</h5>
+                <p class="mt-5 fw-light p-footer-about">About Us</p>
+                <p class="fw-light p-footer-about">Shop</p>
+                <p class="fw-light p-footer-about">Blog</p>
+                <p class="fw-light p-footer-about">Privacy Policy</p>
+                <p class="fw-light p-footer-about">Contact us</p>
+            </div>
+            <div class="col-lg-2 col-md-12">
+                <h5 class="fw-bold text-white mt-4">Contact Us</h5>
+                <p class="mt-5 fw-light p-footer-about"><i class="fa-solid fa-phone me-2"></i>(+40) 74 0920 2288</p>
+                <p class="fw-light p-footer-about"><i class="fa-solid fa-envelope me-2"></i>office@rentacar.com</p>
+                <p class="fw-light p-footer-about"><i class="fa-solid fa-location-dot me-2"></i>New York 11673 Collins
+                    Street West Victoria United State.</p>
+            </div>
+
+            <div class="col-lg-2 col-md-12">
+                <h5 class="fw-bold text-white mt-4">Web Design</h5>
+                <p class="mt-5 fw-light p-footer-about">Mobile Application</p>
+                <p class="fw-light p-footer-about">SEO</p>
+                <p class="fw-light p-footer-about">Blog</p>
+                <p class="fw-light p-footer-about">Ecommerce Magazine</p>
+                <p class="fw-light p-footer-about">Outsourcing</p>
+            </div>
+            <div class="footer bg-light text-secondary row d-flex align-items-center mt-5">
+                <img src="img/img-logo.jpg" alt="logo" class="col-lg-3 col-md-12">
+                <p class="col-lg-9 col-md-12 text-center m-0">Copyright 2022 &copy; All Rights Reserved.</p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    </script>
+    <script src="script.js"></script>
+    <script>
+        window.onload = function () {
+            let popoverElements = document.querySelectorAll("[data-bs-toggle='popover']");
+            [].forEach.call(popoverElements, (el) => {
+                new bootstrap.Popover(el);
+            });
+        };
+
+        function showToast() {
+            const toastEl = document.getElementById("liveToast");
+            const toast = new bootstrap.Toast(toastEl);
+            toast.show();
+        };
+    </script>
+</body>
+
+</html>
